@@ -33,7 +33,7 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        nombre = prompt('hola rey','ingresa tu nombre')
+        nombre = prompt('Ingreso de datos','ingresa tu nombre')
         self.txt_nombre.delete(0,1000)
         self.txt_nombre.insert(100,nombre)
 

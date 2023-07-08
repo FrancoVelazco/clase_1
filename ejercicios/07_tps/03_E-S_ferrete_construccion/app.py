@@ -37,7 +37,6 @@ a la hora de realizar un alambrado perimetral, se le solicita al usuario que ing
     
 '''
 
-
 class App(customtkinter.CTk):
 
     def __init__(self):

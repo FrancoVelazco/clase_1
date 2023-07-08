@@ -28,8 +28,8 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        resultado_prompt = prompt("Ingreso de datos", "Ingrese un dato")
-        alert("Alerta", resultado_prompt)
+        datos = prompt("Ingreso de datos", "Ingrese un dato")
+        alert("Alerta", datos)
         
         
     
