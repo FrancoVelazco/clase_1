@@ -68,10 +68,6 @@ class App(customtkinter.CTk):
 
         largo = float(largo)
         ancho = float(ancho)
-        quebracho_grueso = int(quebracho_grueso)
-        quebracho_fino = int(quebracho_fino)
-        varillas = int(varillas)
-        alambre = float(alambre)
 
         metros_cuadrados = largo * ancho
         metros_lineales = (largo * 2) + (ancho * 2)
@@ -80,6 +76,9 @@ class App(customtkinter.CTk):
         varillas = metros_lineales / 2
         alambre = metros_lineales * 7
 
+        quebracho_grueso = int(quebracho_grueso)
+        quebracho_fino = int(quebracho_fino)
+        varillas = int(varillas)
 
         quebracho_fino = quebracho_fino - quebracho_grueso
         
