@@ -37,8 +37,47 @@ class App(customtkinter.CTk):
         self.btn_calcular.grid(row=2, pady=20, columnspan=2, sticky="nsew")
 
 
+#"ArgentinaLuz", "FelipeLamparas","JeLuz","HazIluminacion","Osram"
+
     def btn_calcular_on_click(self):
-        pass
+        # TOMA DE DATOS
+        marca = self.combobox_marca.get()
+        cantidad = self.combobox_cantidad.get()
+        cantidad = int(cantidad)
+        precio = cantidad * 800
+        descuento = 0
+
+        if cantidad > 5:
+            descuento = 50
+        else:
+            if cantidad == 5:
+                if marca == "ArgentinaLuz":
+                    descuento = 40
+                else:
+                    descuento = 30
+            else:
+                if cantidad == 4:
+                    if marca == "ArgentinaLuz" or "FelipeLamparas":
+                        descuento = 25
+                    else:
+                        descuento = 20
+                else:
+                    if cantidad == 3:
+                        if marca == "ArgentinaLuz":
+                            descuento = 15
+                        else:
+                            if marca == "FelipeLamparas":
+                                descuento = 10
+                            else:
+                                descuento = 5
+
+        precio = precio - (precio * descuento / 100)
+
+        if precio >= 4000:
+            precio = precio - (precio * 5 / 100)
+
+        alert("Información", f"El precio total es: {precio}")
+
         
     
 if __name__ == "__main__":
