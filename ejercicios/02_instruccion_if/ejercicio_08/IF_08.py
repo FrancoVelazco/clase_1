@@ -41,7 +41,12 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        edad = self.txt_edad.get()
+        estado_civil = self.combobox_estado_civil.get()
+        edad = int(edad)
+
+        if edad > 17 and estado_civil == "Soltero":
+            alert("Información", "Es Soltero y no es menor")
 
         
         
