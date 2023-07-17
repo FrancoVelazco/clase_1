@@ -50,7 +50,54 @@ class App(customtkinter.CTk):
         self.btn_validar.grid(row=4, pady=20, columnspan=2, sticky="nsew")
 
     def btn_validar_on_click(self):
-        pass
+
+        """ apellido = prompt("Toma de datos", "Ingrese su apellido:").capitalize()
+        edad = prompt("Toma de datos", "Ingrese su edad:")
+        edad = int(edad)
+        while edad < 18 and edad > 90:
+            edad = prompt("Toma de datos", "Su edad no esta en el rango de edad permitida:")
+            edad = int(edad)
+            if edad < 18 or edad > 90:
+                break
+
+        estado = prompt("Toma de datos", "Ingrese su estado civil").capitalize()
+        while estado not in ["Soltero/a", "Casado/a", "Divorciado/a", "Viudo/a"]:
+            estado = prompt("Toma de datos", "Su estado civil no esta en el rango permitido:").capitalize()
+            if estado not in ["Soltero/a", "Casado/a", "Divorciado/a", "Viudo/a"]:
+                break """
+
+        legajo = prompt("Toma de datos", "Ingrese su legajo")
+        while legajo != None and legajo != legajo.isdigit():
+            legajo = prompt("Toma de datos", "Ingrese su legajo en digitos")
+            if legajo.isdigit():
+                legajo = int(legajo)
+                break
+        legajo = int(legajo)
+
+        while legajo < 1000 and legajo > 9999:
+                legajo = prompt("Toma de datos", "Su legajo no esta en el rango permitido (Ingrese 4 digitos)")
+                if legajo.isdigit() and legajo > 1000 and legajo < 9999:
+                    legajo = int(legajo)
+                    
+
+        """ self.txt_apellido.delete(0, tkinter.END)
+        self.txt_apellido.insert(0, apellido)
+        self.txt_edad.delete(0, tkinter.END)
+        self.txt_edad.insert(0, edad)
+        self.combobox_tipo.set(estado) """
+        self.txt_legajo.delete(0, tkinter.END)
+        self.txt_legajo.insert(0, legajo)
+
+
+
+
+        
+        
+        
+        """ Apellido
+    Edad, entre 18 y 90 años inclusive.
+    Estado civil, ["Soltero/a", "Casado/a", "Divorciado/a", "Viudo/a"]
+    Número de legajo, numérico de 4 cifras, sin ceros a la izquierda. """
 
 
 if __name__ == "__main__":

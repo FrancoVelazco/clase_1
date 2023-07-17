@@ -32,9 +32,29 @@ class App(customtkinter.CTk):
 
 
     def btn_comenzar_ingreso_on_click(self):
-        pass
+        contador = 0
+        acumulador = 0
 
-    
+        while True:
+            numeros_ingresados = prompt("Titulo", "Ingrese la cantidad de numeros que desee sumar y promediar")
+            
+            if numeros_ingresados == None:
+                break
+            
+            numeros_ingresados = int(numeros_ingresados)
+            acumulador += numeros_ingresados
+
+        if contador != 0:
+            promedio = acumulador / contador
+        else:
+            promedio = 0
+
+        self.txt_suma_acumulada.delete(0, tkinter.END)
+        self.txt_suma_acumulada.insert(0, acumulador)
+        
+        self.txt_promedio.delete(0, tkinter.END)
+        self.txt_promedio.insert(0, promedio)
+        
 if __name__ == "__main__":
     app = App()
     app.geometry("300x300")

@@ -38,7 +38,7 @@ class App(customtkinter.CTk):
         edad = int(edad)
 
         if edad > 17:
-            alert("Información", "MAYOR")
+            print("Información", "MAYOR")
         
 
         

@@ -40,6 +40,61 @@ class App(customtkinter.CTk):
 
     def btn_calcular_on_click(self):
         marca = self.combobox_marca.get()
+        cantidad = int(self.combobox_cantidad.get())
+        precio = cantidad * 800
+        descuento = 0
+
+# FORMA 3 (match)
+
+"""         match cantidad:
+            case 5:
+                  match marca:
+                        case "ArgentinaLuz":
+                            descuento = 40
+                        case _:
+                            descuento = 30
+            case 4:
+                  match marca:
+                        case "ArgentinaLuz" | "FelipeLuz":
+                            descuento = 25
+                        case _:
+                            descuento = 20
+            case 3:
+                  match marca:
+                        case "ArgentinaLuz":
+                            descuento = 15
+                        case "FelipeLamparas":
+                            descuento = 10
+                        case _:
+                            descuento = 5
+            case 2 | 1:
+                  descuento = 0
+            case _:
+                  descuento = 50
+
+
+        precio = precio - (precio * descuento / 100)
+
+        if precio >= 4000:
+            precio = precio - (precio * 5 / 100)
+
+        alert("Información", f"El precio total es: {precio}") """
+        
+
+
+
+
+
+
+
+        
+        # FORMA 2 (ELIF)
+        
+        
+        
+"""
+    def btn_calcular_on_click(self):
+        marca = self.combobox_marca.get()
         cantidad = self.combobox_cantidad.get()
         cantidad = int(cantidad)
         precio = cantidad * 800
@@ -71,7 +126,15 @@ class App(customtkinter.CTk):
             precio = precio - (precio * 5 / 100)
 
         alert("Información", f"El precio total es: {precio}")
-        
+
+"""
+
+
+
+#          FORMA 1 (IF)
+
+
+
 """
 
     def btn_calcular_on_click(self):

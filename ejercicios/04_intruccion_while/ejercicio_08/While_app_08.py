@@ -32,7 +32,28 @@ class App(customtkinter.CTk):
 
 
     def btn_comenzar_ingreso_on_click(self):
-        pass
+        suma_acumulada = 0
+        multiplicacion_acumulada = 1
+
+        while True:
+
+            numeros_ingresados = prompt("Titulo", "Ingrese la cantidad de numeros que desee")
+            
+            if numeros_ingresados == None or numeros_ingresados == "0":
+                break
+            
+            numeros_ingresados = float(numeros_ingresados)
+
+            if numeros_ingresados > 0:
+                suma_acumulada += numeros_ingresados
+            elif numeros_ingresados < 0:
+                multiplicacion_acumulada *= numeros_ingresados
+
+        self.txt_suma_acumulada.delete(0, tkinter.END)
+        self.txt_suma_acumulada.insert(0, suma_acumulada)
+        
+        self.txt_producto.delete(0, tkinter.END)
+        self.txt_producto.insert(0, multiplicacion_acumulada)
 
     
 if __name__ == "__main__":

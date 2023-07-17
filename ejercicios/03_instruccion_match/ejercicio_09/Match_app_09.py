@@ -52,9 +52,50 @@ class App(customtkinter.CTk):
         
     
     def btn_informar_on_click(self):
-        pass
-            
+        estacion = self.combobox_estaciones.get()
+        destino = self.combobox_destino.get()
+        precio = 15000
+        descuento = 0
+        aumento = 0
+
+        match estacion:
+            case "Invierno":
+                match destino:
+                    case "Bariloche":
+                        aumento = 20
+                    case "Mar del plata":
+                        descuento = 20
+                    case _:
+                        descuento = 10
+            case "Verano":
+                match destino:
+                    case "Bariloche":
+                        descuento = 20
+                    case "Mar del plata":
+                        aumento = 20
+                    case _:
+                        aumento = 10
+            case "Primavera" | "Otoño":
+                match destino:
+                    case "Córdoba":
+                        pass
+                    case _:
+                        aumento = 10
+
+        total_descuento = precio - (precio * descuento / 100)
+        total_aumento = precio + (precio * aumento / 100)
+
+        if aumento > 0:
+            alert(message=f"El precio a pagar es de: ${total_aumento}")
+        elif descuento > 0:
+            alert(message=f"El precio a pagar es de: ${total_descuento}")
+        else:
+            alert(message=f"El precio a pagar es de: ${precio}")
+        
+                    
+
     
+
 if __name__ == "__main__":
     app = App()
     app.geometry("300x300")
