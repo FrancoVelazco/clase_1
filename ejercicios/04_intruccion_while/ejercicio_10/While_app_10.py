@@ -33,7 +33,7 @@ class App(customtkinter.CTk):
 
 
     def btn_comenzar_ingreso_on_click(self):
-        contador_negativosacumulador_negativos = 0
+        acumulador_negativos = 0
         acumulador_positivos = 0
         contador_negativos = 0
         contador_positivos = 0
