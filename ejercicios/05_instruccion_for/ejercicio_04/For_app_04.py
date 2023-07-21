@@ -21,7 +21,13 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        for _ in range(0, 1000000):
+            valor = prompt("titulo", "ingresa un valor")
+            
+            if valor == None or not valor.isdigit() or int(valor) != 9:
+                continue
+            else:
+                break
         
     
 if __name__ == "__main__":

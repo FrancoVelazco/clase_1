@@ -27,10 +27,18 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        for i in self.lista_datos:
+            alert("Titulo", f"{i}")
+        
+
         
     def btn_cargar_on_click(self):
-        pass
+        for i in range(3):
+            elementos = prompt("Titulo", "Ingrese datos para acumular en la lista") 
+
+            self.lista_datos.append(elementos)
+
+        
     
 if __name__ == "__main__":
     app = App()

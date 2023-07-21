@@ -22,7 +22,21 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        contador_pares = 0
+        numero = prompt("Titulo", "Ingrese un numero")
+        while numero == None or not numero.isdigit():
+            numero = prompt("Titulo", "Reingrese un numero")
+        
+        numero = int(numero)
+
+        rango_a_recorrer = range(1, numero + 1)
+
+        for numero in rango_a_recorrer:
+
+            if numero % 2 == 0:
+                contador_pares += 1
+        
+        alert("Titulo", f"La cantidad de numeros pares es: {contador_pares}")
         
     
 if __name__ == "__main__":

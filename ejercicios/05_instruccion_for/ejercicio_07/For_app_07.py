@@ -22,7 +22,25 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        contador = 0
+        numero = prompt("Titulo", "Ingresar numero")
+
+        while numero == None or not numero.isdigit():
+            numero = prompt("Titulo", "Ingresar numero")
+
+        numero = int(numero)
+        rango_a_recorrer = range(1, numero + 1)
+        for pepino in rango_a_recorrer:
+            if numero % pepino == 0:
+                alert("Titulo", f"Numeros divisores son: {pepino}")
+                contador+=1
+            else:
+                pass
+        
+        alert("Titulo", f"La cantidad de divisores es {contador}")            
+
+
+
         
     
 if __name__ == "__main__":

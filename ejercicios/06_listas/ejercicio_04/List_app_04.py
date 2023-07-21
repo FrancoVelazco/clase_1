@@ -24,7 +24,7 @@ class App(customtkinter.CTk):
 
 
     def btn_calcular_on_click(self):
-        pass
+        alert("Titulo", f"El numero mas chico es: {min(self.lista_datos)}")
     
     
 if __name__ == "__main__":
