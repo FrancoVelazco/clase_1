@@ -65,7 +65,7 @@ class App(customtkinter.CTk):
                 nombre = prompt("Validación", "Ingrese un nombre con letras")
             
             edad = prompt("Toma de datos", "Ingrese una edad")
-            while edad == None or not edad.isdigit() or int(edad) < 18 or int(edad) > 90:
+            while edad == None or not edad.isdigit() or int(edad) < 18 or int(edad) > 40:
                 edad = prompt("Validación", "Ingrese una edad valida")
             
             edad = int(edad)
