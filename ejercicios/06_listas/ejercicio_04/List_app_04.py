@@ -24,7 +24,18 @@ class App(customtkinter.CTk):
 
 
     def btn_calcular_on_click(self):
-        alert("Titulo", f"El numero mas chico es: {min(self.lista_datos)}")
+        flag = True
+        minimo = None
+
+        for i in self.lista_datos:
+            if flag or i < minimo:
+                minimo = i
+                flag = 1
+                
+            alert("Titulo", f"El numero actual es: {i}")
+        
+        alert("Titulo", f"El numero MINIMO es: {minimo}")
+
     
     
 if __name__ == "__main__":

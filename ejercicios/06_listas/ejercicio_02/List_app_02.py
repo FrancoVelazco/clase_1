@@ -33,10 +33,16 @@ class App(customtkinter.CTk):
 
         
     def btn_cargar_on_click(self):
+        self.lista_datos.clear()
+        
         for i in range(3):
-            elementos = prompt("Titulo", "Ingrese datos para acumular en la lista") 
+            numero = prompt("Titulo", "Ingrese numeros para acumular en la lista") 
+            while numero == None or not numero.isdigit():
+                numero = prompt("Titulo", "Reingrese un numero")
 
-            self.lista_datos.append(elementos)
+            numero = int(numero)             
+
+            self.lista_datos.append(numero)
 
         
     
