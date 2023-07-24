@@ -29,8 +29,7 @@ class App(customtkinter.CTk):
         self.btn_validar.grid(row=4, pady=20, columnspan=2, sticky="nsew")
 
     def btn_validar_on_click(self):
-        flag_mas_votos = True
-        flag_menos_votos = True
+        flag = True
         continuar = True
         mas_votos = 0
         menos_votos = 0
@@ -55,24 +54,27 @@ class App(customtkinter.CTk):
                 votos = prompt("Votos", "Ingrese una cantidad valida de votos que recibio el candidato")
             votos = int(votos)
 
-            if flag_mas_votos or votos > mas_votos:
-                flag_mas_votos = False
+            if flag == True:
                 mas_votos = votos
+                menos_votos = votos
                 nombre_mas_votos = nombre
-            elif flag_menos_votos or votos < menos_votos:
-                flag_menos_votos = False
+                nombre_menos_votos = nombre
+                edad_menos_votos = edad
+                flag = False
+            elif votos < menos_votos:
                 menos_votos = votos
                 nombre_menos_votos = nombre
                 edad_menos_votos = edad
+            elif votos > mas_votos:
+                mas_votos = votos
+                nombre_mas_votos = nombre
 
             acumulador_edades += edad
             contador_edades += 1
             total_votos += votos
             
             continuar = question("Titulo", "¿Desea seguir ingresando candidatos?")
-            if continuar == True:
-                continue
-            else:
+            if not continuar:
                 break
         
         promedio_edades = acumulador_edades / contador_edades
